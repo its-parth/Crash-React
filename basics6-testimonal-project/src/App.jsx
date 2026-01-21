@@ -21,6 +21,7 @@ function App() {
   const surpriseMehandler = (id) => {
     let rid = getRandomInt(1, reviews.length);
     while(rid == id) rid = getRandomInt(1, reviews.length);
+    console.log(id, ' ', rid);
     setReview(reviews[rid-1]);
   }
   return (

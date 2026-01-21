@@ -30,7 +30,7 @@ const Testimonal = ({ review, surpriseMehandler, prevReviewHandler, nextReviewHa
                     <div onClick={() => nextReviewHandler(id)} className="next-btn text-purple-400 cursor-pointer"><GrNext />
                     </div>
                 </div>
-                <div onClick={() => surpriseMehandler()} className="surprise-me-btn bg-violet-400 text-white px-6 py-1 rounded-sm font-bold text-sm cursor-pointer select-none">Surprise Me</div>
+                <div onClick={() => surpriseMehandler(id)} className="surprise-me-btn bg-violet-400 text-white px-6 py-1 rounded-sm font-bold text-sm cursor-pointer select-none">Surprise Me</div>
             </div>
         </div>
     )
