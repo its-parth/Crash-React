@@ -18,7 +18,7 @@ const Navbar = ({isLogin, setIsLogin}) => {
                     isLogin ? 
                         (
                             <>
-                                <Link onClick={setIsLogin(false)} className="login-btn bg-(--richblack-800) py-2 px-5 rounded-lg">Log out</Link>
+                                <Link onClick={() => setIsLogin(false)} className="login-btn bg-(--richblack-800) py-2 px-5 rounded-lg">Log out</Link>
                                 <Link to={'/dashboard'}  className="signup-btn  bg-(--richblack-800) py-2 px-5 rounded-lg">Dashboard</Link>
                             </>
                         )
