@@ -1,29 +1,15 @@
-import React, { useEffect, useState } from 'react'
 import Loader from './Loader ';
+import useGif from '../hooks/useGif';
 
 const RandomGif = () => {
-    const [gifURL, setGifURL] = useState('');
-    const API_URL = import.meta.env.VITE_GIPHY_BASE_URL;
-    const API_KEY = import.meta.env.VITE_GIPHY_API_KEY;
-    const [isLoadingGif, setIsLoadingGif] = useState(true);
-    const fetchData = async () => {
-        setIsLoadingGif(true);
-        const response = await fetch(`${API_URL}${API_KEY}`);
-        const data = await response.json();
-        const imgUrl = data?.data?.images?.original?.url;
-        setGifURL(imgUrl);
-        setIsLoadingGif(false);
-    }
+    const {gifURL, fetchData, isLoadingGif} = useGif();
     const generateGifHandler = () => {
         fetchData();
     }
-    useEffect(() => {
-        fetchData();
-    }, []);
   return (
     <div className='w-3/6 bg-green-300 rounded-lg flex flex-col gap-3 items-center my-3 border py-4'>
         <h2 className='uppercase font-bold'>A Random Gif</h2>
-        <div className="random-gif max-w-4/6 w-full">{
+        <div className="random-gif max-w-4/6 w-full flex justify-center">{
             isLoadingGif ? 
             <div className='max-w-full flex justify-center'><Loader /></div>
             :
