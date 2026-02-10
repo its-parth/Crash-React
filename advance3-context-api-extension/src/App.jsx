@@ -8,7 +8,7 @@ import { AppContext } from './context/AppContext'
 function App() {
   const {currPage, fetchData} = useContext(AppContext);
   useEffect(() => {
-    fetchData(currPage);
+    fetchData(currPage); 
   }, [currPage]);
   return (
     <div className='flex flex-col items-center'>
