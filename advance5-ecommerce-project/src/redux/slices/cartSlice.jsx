@@ -21,7 +21,7 @@ export const cartSlice = createSlice({
 
 export const selectIsInCart = (state, productId) => {
     return state.cart.cartItems.some(
-        item => item.id === productId
+        item => item.id === productId 
     )
 }   
 
