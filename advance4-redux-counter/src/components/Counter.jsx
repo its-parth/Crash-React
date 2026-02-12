@@ -3,6 +3,7 @@ import { decrement, increment } from "../redux/slices/CounterSlice";
 
 const Counter = () => {
     const value = useSelector((state) => state.counter.value);
+    console.log(value)
     const dispatch = useDispatch();
   return (
     <div className='w-screen h-screen flex justify-center items-center'>
