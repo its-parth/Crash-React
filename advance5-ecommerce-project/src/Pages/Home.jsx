@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import Product from '../components/Product'
 import Loader from '../components/Loader';
 
-const Home = () => {
+const Home = ({loading, setLoading}) => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
